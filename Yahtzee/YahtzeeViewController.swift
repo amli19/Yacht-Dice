@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class YahtzeeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -14,6 +15,7 @@ class YahtzeeViewController: UIViewController {
         // Do any additional setup after loading the view.
         initStart()
     }
+    
 
     var diceRoll:[Dice]=[]
     var count = 3
@@ -27,13 +29,50 @@ class YahtzeeViewController: UIViewController {
 
     @IBOutlet weak var NumberOfRolls: UILabel!
     
+    //dice images
     @IBOutlet weak var D1: UIButton!
     @IBOutlet weak var D2: UIButton!
     @IBOutlet weak var D3: UIButton!
     @IBOutlet weak var D4: UIButton!
     @IBOutlet weak var D5: UIButton!
     
+    @IBOutlet weak var Bonus: UILabel!
+    @IBOutlet weak var Total: UILabel!
     @IBOutlet weak var currentPlayer: UILabel!
+    
+    //1st column Player 1
+    @IBOutlet weak var P1Ones: UILabel!
+    @IBOutlet weak var P1Twos: UILabel!
+    @IBOutlet weak var P1Threes: UILabel!
+    @IBOutlet weak var P1Fours: UILabel!
+    @IBOutlet weak var P1Fives: UILabel!
+    @IBOutlet weak var P1Sixes: UILabel!
+    
+    //1st column Player 2
+    @IBOutlet weak var P2Ones: UILabel!
+    @IBOutlet weak var P2Twos: UILabel!
+    @IBOutlet weak var P2Threes: UILabel!
+    @IBOutlet weak var P2Fours: UILabel!
+    @IBOutlet weak var P2Fives: UILabel!
+    @IBOutlet weak var P2Sixes: UILabel!
+    
+    //2nd column Player 1
+    @IBOutlet weak var P1Free: UILabel!
+    @IBOutlet weak var P1ThreeOfKind: UILabel!
+    @IBOutlet weak var P1FourOfKind: UILabel!
+    @IBOutlet weak var P1FullHouse: UILabel!
+    @IBOutlet weak var P1SmStright: UILabel!
+    @IBOutlet weak var P1Lstright: UILabel!
+    @IBOutlet weak var P1Yahtzee: UILabel!
+    //2nd column Player 2
+    @IBOutlet weak var P2Free: UILabel!
+    @IBOutlet weak var P2ThreeOfKind: UILabel!
+    @IBOutlet weak var P2FourOfKind: UILabel!
+    @IBOutlet weak var P2FullHouse: UILabel!
+    @IBOutlet weak var P2SmStright: UILabel!
+    @IBOutlet weak var P2Lstright: UILabel!
+    @IBOutlet weak var P2Yahtzee: UILabel!
+    
     
     @IBAction func Roll(_ sender: Any) {
         //rolls random number from 1-6 for all dices not selected
@@ -87,6 +126,65 @@ class YahtzeeViewController: UIViewController {
         diceRoll[4].selected.toggle()
     }
     
+    //Left side buttons
+    @IBAction func Ones(_ sender: Any) {
+        CalculateSingles()
+        if(Player == 1){
+            
+        }
+    }
+    @IBAction func Twos(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Threes(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Fours(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Fives(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Sixes(_ sender: Any) {
+        nextPlayer()
+    }
+    
+    //Right side buttons
+    @IBAction func Free(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func ThreeOfKind(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func FourOfKind(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Fullhouse(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func SStraight(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func LStraight(_ sender: Any) {
+        nextPlayer()
+    }
+    @IBAction func Yahtzee(_ sender: Any) {
+        //number of rolls must be 2 or lower
+        //register score when tapped
+        if(count<2){
+            if(Player == 1){
+                self.P1Yahtzee.text = "3"
+                nextPlayer()
+            }
+            if(Player == 2){
+                self.P1Yahtzee.text = "3"
+                nextPlayer()
+            }
+            
+        }
+    }
+
+    
     func initStart()  {
         diceRoll.append(D1Item)
         diceRoll.append(D2Item)
@@ -111,7 +209,7 @@ class YahtzeeViewController: UIViewController {
             nextTurnReset()
         }
     }
-//reset when player ends turn
+//reset when player ends turn. used in nextPlayer
     func nextTurnReset() {
         D1Item.selected=false
         D2Item.selected=false
@@ -132,10 +230,13 @@ class YahtzeeViewController: UIViewController {
         D5.setImage(UIImage(named: "Dice1"), for: .normal)
     }
     
-    struct Dice {
+    struct Dice:Equatable {
         var value:Int
         var selected:Bool
+        func getValue() -> Int{return value}
     }
+
+
     
 }
 

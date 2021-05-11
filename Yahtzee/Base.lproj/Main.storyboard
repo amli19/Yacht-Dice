@@ -95,30 +95,51 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvn-5M-IfN">
                                                 <rect key="frame" x="21.666666666666686" y="0.0" width="31" height="30"/>
                                                 <state key="normal" title="Free"/>
+                                                <connections>
+                                                    <action selector="Free:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqL-2H-PBa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI2-y0-p3W">
                                                 <rect key="frame" x="0.0" y="50" width="74" height="30"/>
                                                 <state key="normal" title="3 of a Kind"/>
+                                                <connections>
+                                                    <action selector="ThreeOfKind:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2s-Bn-Icq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-Au-Ftg">
                                                 <rect key="frame" x="0.0" y="100" width="74" height="30"/>
                                                 <state key="normal" title="4 of a Kind"/>
+                                                <connections>
+                                                    <action selector="FourOfKind:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TgU-2y-j64"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csQ-pD-t0y">
                                                 <rect key="frame" x="1" y="150" width="72" height="30"/>
                                                 <state key="normal" title="Full House"/>
+                                                <connections>
+                                                    <action selector="Fullhouse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qzj-Py-f0Z"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-bs-4bh">
                                                 <rect key="frame" x="1" y="200" width="72" height="30"/>
                                                 <state key="normal" title="S. Straight"/>
+                                                <connections>
+                                                    <action selector="SStraight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IaC-iZ-xGg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR2-Io-EAD">
                                                 <rect key="frame" x="1.6666666666666856" y="250" width="71" height="30"/>
                                                 <state key="normal" title="L. Straight"/>
+                                                <connections>
+                                                    <action selector="LStraight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6DX-eh-VRd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SX-2h-qiO">
                                                 <rect key="frame" x="9.6666666666666856" y="300" width="55" height="30"/>
                                                 <state key="normal" title="Yahtzee"/>
+                                                <connections>
+                                                    <action selector="Yahtzee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bT-5M-Sx9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -228,26 +249,44 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWR-MT-FjT">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="1's"/>
+                                                <connections>
+                                                    <action selector="Ones:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysm-Jc-jSG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-mp-5FT">
                                                 <rect key="frame" x="0.0" y="50" width="30" height="30"/>
                                                 <state key="normal" title="2's"/>
+                                                <connections>
+                                                    <action selector="Twos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LPd-Sa-COw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSU-6i-x8p">
                                                 <rect key="frame" x="0.0" y="100" width="30" height="30"/>
                                                 <state key="normal" title="3's"/>
+                                                <connections>
+                                                    <action selector="Threes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBk-TH-rcA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPS-Om-sCd">
                                                 <rect key="frame" x="0.0" y="150" width="30" height="30"/>
                                                 <state key="normal" title="4's"/>
+                                                <connections>
+                                                    <action selector="Fours:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T55-sc-T3d"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYB-wi-8om">
                                                 <rect key="frame" x="0.0" y="200" width="30" height="30"/>
                                                 <state key="normal" title="5's"/>
+                                                <connections>
+                                                    <action selector="Fives:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fdu-W5-dod"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-GC-Hjw">
                                                 <rect key="frame" x="0.0" y="250" width="30" height="30"/>
                                                 <state key="normal" title="6's"/>
+                                                <connections>
+                                                    <action selector="Sixes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQU-8I-uTQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -433,12 +472,40 @@
                     </view>
                     <navigationItem key="navigationItem" id="fwJ-pi-hPC"/>
                     <connections>
+                        <outlet property="Bonus" destination="6Hm-Fi-Kvi" id="BPd-Ef-udq"/>
                         <outlet property="D1" destination="1dh-GY-BgK" id="DKn-df-Chw"/>
                         <outlet property="D2" destination="Yga-SU-TDS" id="JoZ-Pe-xVI"/>
                         <outlet property="D3" destination="gVb-a7-wIW" id="Hes-H0-v2q"/>
                         <outlet property="D4" destination="mIZ-Uh-Y8S" id="CVj-r7-aW7"/>
                         <outlet property="D5" destination="7qU-QV-JCl" id="SIn-QV-7HW"/>
                         <outlet property="NumberOfRolls" destination="ALz-Yz-SvT" id="UNi-G2-s8j"/>
+                        <outlet property="P1Fives" destination="Ozf-4w-r0B" id="jNL-Hl-gpi"/>
+                        <outlet property="P1FourOfKind" destination="SiD-gg-e4a" id="tla-jm-0Wx"/>
+                        <outlet property="P1Fours" destination="OrM-Wh-S16" id="MHJ-SM-859"/>
+                        <outlet property="P1Free" destination="36J-9E-bWo" id="ApA-z7-cVF"/>
+                        <outlet property="P1FullHouse" destination="Oss-8F-3iw" id="2s8-7U-UY6"/>
+                        <outlet property="P1Lstright" destination="EtX-MC-2Fn" id="tEh-LK-mvc"/>
+                        <outlet property="P1Ones" destination="Bkp-Gc-fQw" id="fZU-lG-dqu"/>
+                        <outlet property="P1Sixes" destination="HQx-a1-FHw" id="XLd-Y6-OBn"/>
+                        <outlet property="P1SmStright" destination="9Ds-de-6oM" id="ohH-l4-coZ"/>
+                        <outlet property="P1ThreeOfKind" destination="Qqf-Im-hko" id="2aJ-Sg-FDl"/>
+                        <outlet property="P1Threes" destination="apv-WP-DIA" id="dtY-tW-hmc"/>
+                        <outlet property="P1Twos" destination="gq1-sW-nJA" id="hit-n3-Phg"/>
+                        <outlet property="P1Yahtzee" destination="F24-Ne-dLC" id="CSD-7B-hd8"/>
+                        <outlet property="P2Fives" destination="VIK-Ea-HBD" id="mQH-Lz-eLZ"/>
+                        <outlet property="P2FourOfKind" destination="erk-TW-RyG" id="aqj-M2-XMM"/>
+                        <outlet property="P2Fours" destination="lyZ-26-GF8" id="DUh-EV-uSd"/>
+                        <outlet property="P2Free" destination="SMM-ag-2ch" id="Mz3-jK-7Dx"/>
+                        <outlet property="P2FullHouse" destination="Icz-Vx-NbE" id="u3B-gP-2UM"/>
+                        <outlet property="P2Lstright" destination="tG9-95-Hh4" id="uUj-Mv-6di"/>
+                        <outlet property="P2Ones" destination="T3l-G9-KdF" id="fzX-Mb-NQy"/>
+                        <outlet property="P2Sixes" destination="cJ3-3L-9X1" id="shb-c1-8hO"/>
+                        <outlet property="P2SmStright" destination="EuY-5v-sUi" id="c5r-WI-rrA"/>
+                        <outlet property="P2ThreeOfKind" destination="g8x-ed-nDE" id="AOK-W3-Zqx"/>
+                        <outlet property="P2Threes" destination="ppX-WS-ZXQ" id="CSW-2y-BS1"/>
+                        <outlet property="P2Twos" destination="Nyy-Mm-JgN" id="cml-kE-OgA"/>
+                        <outlet property="P2Yahtzee" destination="5sl-Sz-9il" id="li6-vH-7Qq"/>
+                        <outlet property="Total" destination="jJV-gC-EMY" id="a79-oU-JY3"/>
                         <outlet property="currentPlayer" destination="Ov4-GP-n3R" id="sn4-nx-izQ"/>
                     </connections>
                 </viewController>
