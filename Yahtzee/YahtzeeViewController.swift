@@ -12,6 +12,7 @@ class YahtzeeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initStart()
     }
 
     var diceRoll:[Dice]=[]
@@ -21,15 +22,8 @@ class YahtzeeViewController: UIViewController {
     let D3Item = Dice(value: 1, selected: false)
     let D4Item = Dice(value: 1, selected: false)
     let D5Item = Dice(value: 1, selected: false)
-
     
-//    @IBOutlet weak var dicebutton: UIButton!
-//    @IBAction func D1test(_ sender: Any) {
-//        //let D1Roll = arc4random_uniform(6) + 1
-//        canBeRolled.toggle()
-//        dicebutton.setImage(UIImage(named: "Dice1"), for: .normal)
-//
-//    }
+
     @IBOutlet weak var NumberOfRolls: UILabel!
     
     @IBOutlet weak var D1: UIButton!
@@ -48,7 +42,21 @@ class YahtzeeViewController: UIViewController {
             if(diceRoll[currentIndex].selected==false && count > 0){
                 let DRoll = arc4random_uniform(6) + 1
                 diceRoll[currentIndex].value=Int(DRoll)
-                D1.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                if(currentIndex==0){
+                    D1.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                }
+                if(currentIndex==1){
+                    D2.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                }
+                if(currentIndex==2){
+                    D3.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                }
+                if(currentIndex==3){
+                    D4.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                }
+                if(currentIndex==4){
+                    D5.setImage(UIImage(named: "Dice\(DRoll)"), for: .normal)
+                }
             }
             currentIndex+=1
         }
@@ -56,21 +64,6 @@ class YahtzeeViewController: UIViewController {
             count-=1
         }
         self.NumberOfRolls.text="Rolls: "+String(count)
-        
-//        let D1Roll = arc4random_uniform(6) + 1
-//        let D2Roll = arc4random_uniform(6) + 1
-//        let D3Roll = arc4random_uniform(6) + 1
-//        let D4Roll = arc4random_uniform(6) + 1
-//        let D5Roll = arc4random_uniform(6) + 1
-//        let D6Roll = arc4random_uniform(6) + 1
-            
-        //displays rolls
-//        D1.setImage(UIImage(named: "Dice\(D6Roll)"), for: .normal)
-//        D2.setImage(UIImage(named: "Dice\(D6Roll)"), for: .normal)
-//        D3.setImage(UIImage(named: "Dice\(D6Roll)"), for: .normal)
-//        D4.setImage(UIImage(named: "Dice\(D6Roll)"), for: .normal)
-//        D5.setImage(UIImage(named: "Dice\(D6Roll)"), for: .normal)
-        
     }
     
     @IBAction func D1Tap(_ sender: Any) {
@@ -94,6 +87,14 @@ class YahtzeeViewController: UIViewController {
         diceRoll[4].selected.toggle()
     }
     
+    func initStart()  {
+        diceRoll.append(D1Item)
+        diceRoll.append(D2Item)
+        diceRoll.append(D3Item)
+        diceRoll.append(D4Item)
+        diceRoll.append(D5Item)
+        self.NumberOfRolls.text="Rolls: "+String(count)
+    }
     
     //
 //    func DiceArray{
