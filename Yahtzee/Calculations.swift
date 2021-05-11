@@ -50,39 +50,50 @@ var currentIndex = 0
 //}
 func parseValues()  {
     //insert values into temp array
-    while (currentIndex<6) {
+    for _ in yahtzeeViewController?.diceRoll {
         valueArray.append((yahtzeeViewController?.diceRoll[currentIndex].value)!)
         currentIndex+=1
     }
 }
-func Ones() -> Int {
+func countNum(num:Int)->Int{
     parseValues()
-    return currentIndex
+    for _ in valueArray {
+        if(valueArray.contains(num)){
+            count+=1
+        }
+    }
+    return count
+}
+func Ones() -> Int {
+    return countNum(num: 1)
+
 }
 func Twos() -> Int {
-    parseValues()
-    return currentIndex*2
+    return countNum(num: 2)*2
 }
 func Threes() -> Int {
-    parseValues()
-    return currentIndex*3
+    return countNum(num: 2)*3
 }
 func Fours() -> Int {
-    parseValues()
-    return currentIndex*4
+    return countNum(num: 2)*4
 }
 func Fives() -> Int {
-    parseValues()
-    return currentIndex*5
+    return countNum(num: 2)*5
 }
 func Sixes() -> Int {
-    parseValues()
-    return currentIndex*6
+    return countNum(num: 2)*6
 }
 
 
 func FreeHand() -> Int {
-    <#function body#>
+    var free = 0
+    var i = 0
+    parseValues()
+    for _ in valueArray {
+        free += valueArray[i]
+        i+=1
+    }
+    return free
 }
 func ThreeKinds() -> Int {
     <#function body#>

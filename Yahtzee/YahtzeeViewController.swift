@@ -15,8 +15,7 @@ class YahtzeeViewController: UIViewController {
         // Do any additional setup after loading the view.
         initStart()
     }
-    
-
+    //let calculations:Calculations?
     var diceRoll:[Dice]=[]
     var count = 3
     var Player = 1
@@ -128,12 +127,19 @@ class YahtzeeViewController: UIViewController {
     
     //Left side buttons
     @IBAction func Ones(_ sender: Any) {
-        CalculateSingles()
+        
         if(Player == 1){
-            
+            self.P1Ones.text =  String(Calculations.Ones())
+            nextPlayer()
         }
+        if(Player == 2){
+            Calculations.Ones()
+            nextPlayer()
+        }
+
     }
     @IBAction func Twos(_ sender: Any) {
+        Calculations.Twos()
         nextPlayer()
     }
     @IBAction func Threes(_ sender: Any) {
@@ -230,7 +236,7 @@ class YahtzeeViewController: UIViewController {
         D5.setImage(UIImage(named: "Dice1"), for: .normal)
     }
     
-    struct Dice:Equatable {
+    struct Dice:Sequence {
         var value:Int
         var selected:Bool
         func getValue() -> Int{return value}
