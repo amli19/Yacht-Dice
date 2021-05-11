@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02404432264A2C8C006E57C3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02404431264A2C8C006E57C3 /* StartViewController.swift */; };
-		02446C4D264AA3970021660F /* Singles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02446C4C264AA3970021660F /* Singles.swift */; };
+		02446C4D264AA3970021660F /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02446C4C264AA3970021660F /* Calculations.swift */; };
 		02EC33A6264962F400DD1C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A5264962F400DD1C9B /* AppDelegate.swift */; };
 		02EC33A8264962F400DD1C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A7264962F400DD1C9B /* SceneDelegate.swift */; };
 		02EC33AA264962F400DD1C9B /* YahtzeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A9264962F400DD1C9B /* YahtzeeViewController.swift */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		02404431264A2C8C006E57C3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		02446C4C264AA3970021660F /* Singles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singles.swift; sourceTree = "<group>"; };
+		02446C4C264AA3970021660F /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		02EC33A2264962F400DD1C9B /* Yahtzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EC33A5264962F400DD1C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02EC33A7264962F400DD1C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 				02EC33A5264962F400DD1C9B /* AppDelegate.swift */,
 				02EC33A7264962F400DD1C9B /* SceneDelegate.swift */,
 				02EC33A9264962F400DD1C9B /* YahtzeeViewController.swift */,
-				02446C4C264AA3970021660F /* Singles.swift */,
+				02446C4C264AA3970021660F /* Calculations.swift */,
 				02404431264A2C8C006E57C3 /* StartViewController.swift */,
 				02EC33AB264962F400DD1C9B /* Main.storyboard */,
 				02EC33AE264962F400DD1C9B /* Assets.xcassets */,
@@ -143,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02446C4D264AA3970021660F /* Singles.swift in Sources */,
+				02446C4D264AA3970021660F /* Calculations.swift in Sources */,
 				02404432264A2C8C006E57C3 /* StartViewController.swift in Sources */,
 				02EC33AA264962F400DD1C9B /* YahtzeeViewController.swift in Sources */,
 				02EC33A6264962F400DD1C9B /* AppDelegate.swift in Sources */,
