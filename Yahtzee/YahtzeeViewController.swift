@@ -18,6 +18,7 @@ class YahtzeeViewController: UIViewController {
     //let calculations:Calculations?
     var diceRoll:[Dice]=[]
     var count = 3
+    var countdown = 40
     var Player = 1
     var D1Item = Dice(value: 1, selected: false)
     var D2Item = Dice(value: 1, selected: false)
@@ -139,7 +140,7 @@ class YahtzeeViewController: UIViewController {
 
     }
     @IBAction func Twos(_ sender: Any) {
-        Calculations.Twos()
+        //Calculations.Twos()
         nextPlayer()
     }
     @IBAction func Threes(_ sender: Any) {
@@ -177,17 +178,6 @@ class YahtzeeViewController: UIViewController {
     @IBAction func Yahtzee(_ sender: Any) {
         //number of rolls must be 2 or lower
         //register score when tapped
-        if(count<2){
-            if(Player == 1){
-                self.P1Yahtzee.text = "3"
-                nextPlayer()
-            }
-            if(Player == 2){
-                self.P1Yahtzee.text = "3"
-                nextPlayer()
-            }
-            
-        }
     }
 
     
@@ -214,6 +204,7 @@ class YahtzeeViewController: UIViewController {
             Player = 1
             nextTurnReset()
         }
+        
     }
 //reset when player ends turn. used in nextPlayer
     func nextTurnReset() {
@@ -236,7 +227,16 @@ class YahtzeeViewController: UIViewController {
         D5.setImage(UIImage(named: "Dice1"), for: .normal)
     }
     
-    struct Dice:Sequence {
+    func isEnd(){
+        if(countdown==0){
+            //end the game and show winner
+        }
+        if(countdown >= 1){
+            countdown-=1
+        }
+    }
+    
+    struct Dice {
         var value:Int
         var selected:Bool
         func getValue() -> Int{return value}

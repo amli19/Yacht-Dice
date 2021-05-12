@@ -6,63 +6,32 @@
 //
 
 import UIKit
-var yahtzeeViewController: YahtzeeViewController?
+var yahtzeeViewController = YahtzeeViewController()
 
-var count = 0
+
 var valueArray:[Int]=[]
 var currentIndex = 0
-//func CalculateSingles(){
-//    //insert values into temparray
-//
-//    var valueArray:[Int]=[]
-//    var currentIndex = 0
-//    while (currentIndex<6) {
-//        valueArray.append((yahtzeeViewController?.diceRoll[currentIndex].value)!)
-//        currentIndex+=1
-//    }
-//    //counting how many of each type of numbers there are
-//    var numOf1 = 0
-//    var numOf2 = 0
-//    var numOf3 = 0
-//    var numOf4 = 0
-//    var numOf5 = 0
-//    var numOf6 = 0
-//    for _ in valueArray{
-//        if(valueArray.contains(1)){
-//            numOf1+=1
-//        }
-//        if(valueArray.contains(2)){
-//            numOf2+=1
-//        }
-//        if(valueArray.contains(3)){
-//            numOf3+=1
-//        }
-//        if(valueArray.contains(4)){
-//            numOf4+=1
-//        }
-//        if(valueArray.contains(5)){
-//            numOf5+=1
-//        }
-//        if(valueArray.contains(6)){
-//            numOf6+=1
-//        }
-//    }
-//}
+var countNums = 0
+
 func parseValues()  {
     //insert values into temp array
-    for _ in yahtzeeViewController?.diceRoll {
-        valueArray.append((yahtzeeViewController?.diceRoll[currentIndex].value)!)
+//    if let yat = yahtzeeViewController{
+//        diceRoll =
+//    }
+    for _ in yahtzeeViewController.diceRoll {
+        valueArray.append((yahtzeeViewController.diceRoll[currentIndex].value))
         currentIndex+=1
     }
 }
+
 func countNum(num:Int)->Int{
     parseValues()
     for _ in valueArray {
         if(valueArray.contains(num)){
-            count+=1
+            countNums+=1
         }
     }
-    return count
+    return countNums
 }
 func Ones() -> Int {
     return countNum(num: 1)
