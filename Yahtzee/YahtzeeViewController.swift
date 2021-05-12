@@ -19,7 +19,6 @@ class YahtzeeViewController: UIViewController {
     var D4Item = Dice(value: 1, selected: false)
     var D5Item = Dice(value: 1, selected: false)
     //var calc = Calculations()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,7 +29,6 @@ class YahtzeeViewController: UIViewController {
 
     
     
-
     @IBOutlet weak var NumberOfRolls: UILabel!
     
     //dice images
@@ -250,9 +248,8 @@ class YahtzeeViewController: UIViewController {
     struct Dice {
         var value:Int
         var selected:Bool
-        func getValue() -> Int{return value}
     }
-
+    
 
     
 }

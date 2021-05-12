@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var TitleCard: UIImageView!
     
     @IBAction func PlayButton(_ sender: Any) {
-        performSegue(withIdentifier: "showGame", sender: nil)
+        performSegue(withIdentifier: "showGame", sender: sender)
     }
     
     @IBAction func QuitButton(_ sender: Any) {
