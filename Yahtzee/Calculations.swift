@@ -5,7 +5,7 @@
 //  Created by JPL-ST-SPRING2021 on 5/11/21.
 //
 
-import Foundation
+import UIKit
 class Calculations{
     var yachtDiceViewController = YachtDiceViewController()
 
@@ -88,8 +88,7 @@ class Calculations{
     //    return score
     //}
     
-    
-    //this is wrong
+
     func FourKinds() -> Int {
         score = 0
         i = 0
@@ -243,8 +242,8 @@ class Calculations{
         }
     }
     
+    //calculates final total
     func Total(){
-
         for _ in P1Total {
             P1total += P1Total[i]
             i+=1

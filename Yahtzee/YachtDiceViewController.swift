@@ -9,9 +9,10 @@ import UIKit
 
 
 class YachtDiceViewController: UIViewController {
+    
     var diceRoll:[Dice]=[]
     var count:Int = 3
-    var countdown = 40
+    var countdown = 24
     var Player = 1
     var D1Item = Dice(value: 1, selected: false)
     var D2Item = Dice(value: 1, selected: false)
@@ -19,11 +20,11 @@ class YachtDiceViewController: UIViewController {
     var D4Item = Dice(value: 1, selected: false)
     var D5Item = Dice(value: 1, selected: false)
     //var calc = Calculations()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initStart()
-        
     }
     //let calculations:Calculations?
 
@@ -137,19 +138,25 @@ class YachtDiceViewController: UIViewController {
     }
     @IBAction func Twos(_ sender: Any) {
         //Calculations.Twos()
-        if let text1 = P1Twos.text, text1.isEmpty && Player == 1{
-            
-            self.P1Twos.text = String(2)
-            nextPlayer()
-        }
-        else if let text2 = P2Twos.text, text2.isEmpty && Player == 2{
-            self.P2Twos.text = String(2)
-            nextPlayer()
+        if(count<=2){
+            if let text1 = P1Twos.text, text1.isEmpty && Player == 1{
+                
+                self.P1Twos.text = String(2)
+                nextPlayer()
+            }
+            else if let text2 = P2Twos.text, text2.isEmpty && Player == 2{
+                self.P2Twos.text = String(2)
+                nextPlayer()
+            }
+            countdown -= 1
         }
         
     }
     @IBAction func Threes(_ sender: Any) {
-        nextPlayer()
+        if(count <= 2){
+            nextPlayer()
+        }
+        
     }
     @IBAction func Fours(_ sender: Any) {
         nextPlayer()
@@ -163,9 +170,6 @@ class YachtDiceViewController: UIViewController {
     
     //Right side buttons
     @IBAction func Free(_ sender: Any) {
-        nextPlayer()
-    }
-    @IBAction func ThreeOfKind(_ sender: Any) {
         nextPlayer()
     }
     @IBAction func FourOfKind(_ sender: Any) {
@@ -205,7 +209,7 @@ class YachtDiceViewController: UIViewController {
             Player = 2
             nextTurnReset()
         }
-        if(Player == 2){
+        else if(Player == 2){
             self.currentPlayer.text = "Player 1 Turn"
             self.NumberOfRolls.text="Rolls: "+String(count)
             Player = 1
