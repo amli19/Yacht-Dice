@@ -9,15 +9,8 @@ import UIKit
 
 
 class YahtzeeViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        initStart()
-    }
-    //let calculations:Calculations?
     var diceRoll:[Dice]=[]
-    var count = 3
+    var count:Int = 3
     var countdown = 40
     var Player = 1
     var D1Item = Dice(value: 1, selected: false)
@@ -25,6 +18,17 @@ class YahtzeeViewController: UIViewController {
     var D3Item = Dice(value: 1, selected: false)
     var D4Item = Dice(value: 1, selected: false)
     var D5Item = Dice(value: 1, selected: false)
+    //var calc = Calculations()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        initStart()
+        
+    }
+    //let calculations:Calculations?
+
+    
     
 
     @IBOutlet weak var NumberOfRolls: UILabel!
@@ -72,6 +76,9 @@ class YahtzeeViewController: UIViewController {
     @IBOutlet weak var P2SmStright: UILabel!
     @IBOutlet weak var P2Lstright: UILabel!
     @IBOutlet weak var P2Yahtzee: UILabel!
+    
+    
+    @IBOutlet weak var RollView: UIButton!
     
     
     @IBAction func Roll(_ sender: Any) {
@@ -129,19 +136,21 @@ class YahtzeeViewController: UIViewController {
     //Left side buttons
     @IBAction func Ones(_ sender: Any) {
         
-        if(Player == 1){
-            self.P1Ones.text =  String(Calculations.Ones())
-            nextPlayer()
-        }
-        if(Player == 2){
-            Calculations.Ones()
-            nextPlayer()
-        }
+       
 
     }
     @IBAction func Twos(_ sender: Any) {
         //Calculations.Twos()
-        nextPlayer()
+        if let text1 = P1Twos.text, text1.isEmpty && Player == 1{
+            
+            self.P1Twos.text = String(2)
+            nextPlayer()
+        }
+        else if let text2 = P2Twos.text, text2.isEmpty && Player == 2{
+            self.P2Twos.text = String(2)
+            nextPlayer()
+        }
+        
     }
     @IBAction func Threes(_ sender: Any) {
         nextPlayer()
@@ -196,11 +205,13 @@ class YahtzeeViewController: UIViewController {
         count = 3
         if(Player == 1){
             self.currentPlayer.text = "Player 2 Turn"
+            self.NumberOfRolls.text="Rolls: "+String(count)
             Player = 2
             nextTurnReset()
         }
         if(Player == 2){
             self.currentPlayer.text = "Player 1 Turn"
+            self.NumberOfRolls.text="Rolls: "+String(count)
             Player = 1
             nextTurnReset()
         }
