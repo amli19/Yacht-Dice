@@ -6,9 +6,11 @@
 //
 
 import UIKit
-
+//@import Calculator.swift
 
 class YachtDiceViewController: UIViewController {
+    
+    //var calculate:CalculationsDelegate?
     
     var diceRoll:[Dice]=[]
     var count:Int = 3
@@ -19,14 +21,13 @@ class YachtDiceViewController: UIViewController {
     var D3Item = Dice(value: 1, selected: false)
     var D4Item = Dice(value: 1, selected: false)
     var D5Item = Dice(value: 1, selected: false)
-    //var calc = Calculations()
+    var calc = Calculator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initStart()
     }
-    //let calculations:Calculations?
 
     
     
@@ -132,46 +133,148 @@ class YachtDiceViewController: UIViewController {
     
     //Left side buttons
     @IBAction func Ones(_ sender: Any) {
-        
-       
-
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Ones.text, text1.isEmpty {
+                    let current = calc.Ones(arr: diceRoll)
+                    self.P1Ones.text = String(current)
+                    nextPlayer()
+                }
+            
+            }
+            else {
+                if let text2 = P2Ones.text, text2.isEmpty {
+                    let current = calc.Ones(arr: diceRoll)
+                    self.P2Ones.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func Twos(_ sender: Any) {
-        //Calculations.Twos()
         if(count<=2){
-            if let text1 = P1Twos.text, text1.isEmpty && Player == 1{
-                
-                self.P1Twos.text = String(2)
-                nextPlayer()
+            if(Player == 1){
+                if let text1 = P1Twos.text, text1.isEmpty {
+                    let current = calc.Twos(arr: diceRoll)
+                    self.P1Twos.text = String(current)
+                    nextPlayer()
+                }
+            
             }
-            else if let text2 = P2Twos.text, text2.isEmpty && Player == 2{
-                self.P2Twos.text = String(2)
-                nextPlayer()
+            else {
+                if let text2 = P2Twos.text, text2.isEmpty {
+                    let current = calc.Twos(arr: diceRoll)
+                    self.P2Twos.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
+    }
+    @IBAction func Threes(_ sender: Any) {
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Threes.text, text1.isEmpty {
+                    let current = calc.Threes(arr: diceRoll)
+                    self.P1Threes.text = String(current)
+                    nextPlayer()
+                }
+            
+            }
+            else {
+                if let text2 = P2Threes.text, text2.isEmpty {
+                    let current = calc.Threes(arr: diceRoll)
+                    self.P2Threes.text = String(current)
+                    nextPlayer()
+                }
             }
             countdown -= 1
         }
         
     }
-    @IBAction func Threes(_ sender: Any) {
-        if(count <= 2){
-            nextPlayer()
-        }
-        
-    }
     @IBAction func Fours(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Fours.text, text1.isEmpty {
+                    let current = calc.Fours(arr: diceRoll)
+                    self.P1Fours.text = String(current)
+                    nextPlayer()
+                }
+            
+            }
+            else {
+                if let text2 = P2Fours.text, text2.isEmpty {
+                    let current = calc.Fours(arr: diceRoll)
+                    self.P2Fours.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func Fives(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Fives.text, text1.isEmpty {
+                    let current = calc.Fives(arr: diceRoll)
+                    self.P1Fives.text = String(current)
+                    nextPlayer()
+                }
+            
+            }
+            else {
+                if let text2 = P2Fives.text, text2.isEmpty {
+                    let current = calc.Fives(arr: diceRoll)
+                    self.P2Fives.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func Sixes(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Sixes.text, text1.isEmpty {
+                    let current = calc.Sixes(arr: diceRoll)
+                    self.P1Sixes.text = String(current)
+                    nextPlayer()
+                }
+            
+            }
+            else {
+                if let text2 = P2Sixes.text, text2.isEmpty {
+                    let current = calc.Sixes(arr: diceRoll)
+                    self.P2Sixes.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     
     //Right side buttons
     @IBAction func Free(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if(Player == 1){
+                if let text1 = P1Free.text, text1.isEmpty {
+                    let current = calc.freeHand(arr: diceRoll)
+                    self.P1Free.text = String(current)
+                    nextPlayer()
+                }
+            }
+            else {
+                if let text2 = P2Free.text, text2.isEmpty {
+                    let current = calc.freeHand(arr: diceRoll)
+                    self.P2Free.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
+    
     @IBAction func FourOfKind(_ sender: Any) {
         nextPlayer()
     }
@@ -219,17 +322,26 @@ class YachtDiceViewController: UIViewController {
     }
 //reset when player ends turn. used in nextPlayer
     func nextTurnReset() {
-        D1Item.selected=false
-        D2Item.selected=false
-        D3Item.selected=false
-        D4Item.selected=false
-        D5Item.selected=false
-        
-        D1Item.value=1
-        D2Item.value=1
-        D3Item.value=1
-        D4Item.value=1
-        D5Item.value=1
+//        D1Item.selected=false
+//        D2Item.selected=false
+//        D3Item.selected=false
+//        D4Item.selected=false
+//        D5Item.selected=false
+        diceRoll[0].selected=false
+        diceRoll[1].selected=false
+        diceRoll[2].selected=false
+        diceRoll[3].selected=false
+        diceRoll[4].selected=false
+//        D1Item.value=1
+//        D2Item.value=1
+//        D3Item.value=1
+//        D4Item.value=1
+//        D5Item.value=1
+        diceRoll[0].value=1
+        diceRoll[1].value=1
+        diceRoll[2].value=1
+        diceRoll[3].value=1
+        diceRoll[4].value=1
         
         D1.setImage(UIImage(named: "Dice1"), for: .normal)
         D2.setImage(UIImage(named: "Dice1"), for: .normal)
