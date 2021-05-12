@@ -11,7 +11,7 @@
 		02446C4D264AA3970021660F /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02446C4C264AA3970021660F /* Calculations.swift */; };
 		02EC33A6264962F400DD1C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A5264962F400DD1C9B /* AppDelegate.swift */; };
 		02EC33A8264962F400DD1C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A7264962F400DD1C9B /* SceneDelegate.swift */; };
-		02EC33AA264962F400DD1C9B /* YahtzeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A9264962F400DD1C9B /* YahtzeeViewController.swift */; };
+		02EC33AA264962F400DD1C9B /* YachtDiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC33A9264962F400DD1C9B /* YachtDiceViewController.swift */; };
 		02EC33AD264962F400DD1C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EC33AB264962F400DD1C9B /* Main.storyboard */; };
 		02EC33AF264962F400DD1C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EC33AE264962F400DD1C9B /* Assets.xcassets */; };
 		02EC33B2264962F400DD1C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EC33B0264962F400DD1C9B /* LaunchScreen.storyboard */; };
@@ -23,7 +23,7 @@
 		02EC33A2264962F400DD1C9B /* Yahtzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EC33A5264962F400DD1C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02EC33A7264962F400DD1C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02EC33A9264962F400DD1C9B /* YahtzeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahtzeeViewController.swift; sourceTree = "<group>"; };
+		02EC33A9264962F400DD1C9B /* YachtDiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtDiceViewController.swift; sourceTree = "<group>"; };
 		02EC33AC264962F400DD1C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02EC33AE264962F400DD1C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EC33B1264962F400DD1C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			children = (
 				02EC33A5264962F400DD1C9B /* AppDelegate.swift */,
 				02EC33A7264962F400DD1C9B /* SceneDelegate.swift */,
-				02EC33A9264962F400DD1C9B /* YahtzeeViewController.swift */,
+				02EC33A9264962F400DD1C9B /* YachtDiceViewController.swift */,
 				02446C4C264AA3970021660F /* Calculations.swift */,
 				02404431264A2C8C006E57C3 /* StartViewController.swift */,
 				02EC33AB264962F400DD1C9B /* Main.storyboard */,
@@ -145,7 +145,7 @@
 			files = (
 				02446C4D264AA3970021660F /* Calculations.swift in Sources */,
 				02404432264A2C8C006E57C3 /* StartViewController.swift in Sources */,
-				02EC33AA264962F400DD1C9B /* YahtzeeViewController.swift in Sources */,
+				02EC33AA264962F400DD1C9B /* YachtDiceViewController.swift in Sources */,
 				02EC33A6264962F400DD1C9B /* AppDelegate.swift in Sources */,
 				02EC33A8264962F400DD1C9B /* SceneDelegate.swift in Sources */,
 			);

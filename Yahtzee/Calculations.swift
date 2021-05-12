@@ -7,7 +7,7 @@
 
 import Foundation
 class Calculations{
-    var yahtzeeViewController = YahtzeeViewController()
+    var yachtDiceViewController = YachtDiceViewController()
 
     var valueArray:[Int]=[]
     var currentIndex = 0
@@ -22,8 +22,8 @@ class Calculations{
     
     func parseValues()  {
         //insert values into temp array
-        for _ in yahtzeeViewController.diceRoll {
-            valueArray.append((yahtzeeViewController.diceRoll[currentIndex].value))
+        for _ in yachtDiceViewController.diceRoll {
+            valueArray.append((yachtDiceViewController.diceRoll[currentIndex].value))
             currentIndex+=1
         }
     }
@@ -57,10 +57,10 @@ class Calculations{
         return countNum(num: 2)*6
     }
     func Bonus()->Int{
-        if(yahtzeeViewController.Player==1){
+        if(yachtDiceViewController.Player==1){
             return BonusP1()
         }
-        if(yahtzeeViewController.Player==2){
+        if(yachtDiceViewController.Player==2){
             return BonusP2()
         }
         return 0
@@ -164,22 +164,22 @@ class Calculations{
     
     
     func BonusP1()->Int{
-        if let text1 = yahtzeeViewController.P1Ones.text, text1.isEmpty{
+        if let text1 = yachtDiceViewController.P1Ones.text, text1.isEmpty{
             BonusArray.append(Int(text1) ?? 0)
         }
-        if let text2 = yahtzeeViewController.P1Twos.text, text2.isEmpty{
+        if let text2 = yachtDiceViewController.P1Twos.text, text2.isEmpty{
             BonusArray.append(Int(text2) ?? 0)
         }
-        if let text3 = yahtzeeViewController.P1Threes.text, text3.isEmpty{
+        if let text3 = yachtDiceViewController.P1Threes.text, text3.isEmpty{
             BonusArray.append(Int(text3) ?? 0)
         }
-        if let text4 = yahtzeeViewController.P1Fours.text, text4.isEmpty{
+        if let text4 = yachtDiceViewController.P1Fours.text, text4.isEmpty{
             BonusArray.append(Int(text4) ?? 0)
         }
-        if let text5 = yahtzeeViewController.P1Fives.text, text5.isEmpty{
+        if let text5 = yachtDiceViewController.P1Fives.text, text5.isEmpty{
             BonusArray.append(Int(text5) ?? 0)
         }
-        if let text6 = yahtzeeViewController.P1Sixes.text, text6.isEmpty{
+        if let text6 = yachtDiceViewController.P1Sixes.text, text6.isEmpty{
             BonusArray.append(Int(text6) ?? 0)
         }
         
@@ -199,22 +199,22 @@ class Calculations{
         
     }
     func BonusP2()->Int{
-        if let text1 = yahtzeeViewController.P2Ones.text, text1.isEmpty{
+        if let text1 = yachtDiceViewController.P2Ones.text, text1.isEmpty{
             BonusArray.append(Int(text1) ?? 0)
         }
-        if let text2 = yahtzeeViewController.P2Twos.text, text2.isEmpty{
+        if let text2 = yachtDiceViewController.P2Twos.text, text2.isEmpty{
             BonusArray.append(Int(text2) ?? 0)
         }
-        if let text3 = yahtzeeViewController.P2Threes.text, text3.isEmpty{
+        if let text3 = yachtDiceViewController.P2Threes.text, text3.isEmpty{
             BonusArray.append(Int(text3) ?? 0)
         }
-        if let text4 = yahtzeeViewController.P2Fours.text, text4.isEmpty{
+        if let text4 = yachtDiceViewController.P2Fours.text, text4.isEmpty{
             BonusArray.append(Int(text4) ?? 0)
         }
-        if let text5 = yahtzeeViewController.P2Fives.text, text5.isEmpty{
+        if let text5 = yachtDiceViewController.P2Fives.text, text5.isEmpty{
             BonusArray.append(Int(text5) ?? 0)
         }
-        if let text6 = yahtzeeViewController.P2Sixes.text, text6.isEmpty{
+        if let text6 = yachtDiceViewController.P2Sixes.text, text6.isEmpty{
             BonusArray.append(Int(text6) ?? 0)
         }
         
@@ -235,10 +235,10 @@ class Calculations{
     }
     
     func registerTotalArray(chosen:Int){
-        if(yahtzeeViewController.Player==1){
+        if(yachtDiceViewController.Player==1){
             P1Total.append(chosen)
         }
-        else if(yahtzeeViewController.Player==2){
+        else if(yachtDiceViewController.Player==2){
             P2Total.append(chosen)
         }
     }

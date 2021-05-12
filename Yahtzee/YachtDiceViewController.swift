@@ -8,7 +8,7 @@
 import UIKit
 
 
-class YahtzeeViewController: UIViewController {
+class YachtDiceViewController: UIViewController {
     var diceRoll:[Dice]=[]
     var count:Int = 3
     var countdown = 40
