@@ -60,7 +60,6 @@ class YahtzeeViewController: UIViewController {
     
     //2nd column Player 1
     @IBOutlet weak var P1Free: UILabel!
-    @IBOutlet weak var P1ThreeOfKind: UILabel!
     @IBOutlet weak var P1FourOfKind: UILabel!
     @IBOutlet weak var P1FullHouse: UILabel!
     @IBOutlet weak var P1SmStright: UILabel!
@@ -68,7 +67,6 @@ class YahtzeeViewController: UIViewController {
     @IBOutlet weak var P1Yahtzee: UILabel!
     //2nd column Player 2
     @IBOutlet weak var P2Free: UILabel!
-    @IBOutlet weak var P2ThreeOfKind: UILabel!
     @IBOutlet weak var P2FourOfKind: UILabel!
     @IBOutlet weak var P2FullHouse: UILabel!
     @IBOutlet weak var P2SmStright: UILabel!
@@ -250,6 +248,7 @@ class YahtzeeViewController: UIViewController {
         var selected:Bool
     }
     
+
 
     
 }

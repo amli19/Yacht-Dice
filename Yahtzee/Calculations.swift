@@ -14,7 +14,11 @@ class Calculations{
     var countNums = 0
     var score = 0 //
     var i = 0 //for arrays to keep track
+    var P1total=0
+    var P2total=0
     var BonusArray:[Int]=[]
+    var P1Total:[Int]=[]
+    var P2Total:[Int]=[]
     
     func parseValues()  {
         //insert values into temp array
@@ -228,5 +232,26 @@ class Calculations{
             return 0
         }
         
+    }
+    
+    func registerTotalArray(chosen:Int){
+        if(yahtzeeViewController.Player==1){
+            P1Total.append(chosen)
+        }
+        else if(yahtzeeViewController.Player==2){
+            P2Total.append(chosen)
+        }
+    }
+    
+    func Total(){
+
+        for _ in P1Total {
+            P1total += P1Total[i]
+            i+=1
+        }
+        for _ in P2Total {
+            P2total += P2Total[i]
+            i+=1
+        }
     }
 }
