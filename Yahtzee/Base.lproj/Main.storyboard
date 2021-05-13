@@ -1023,7 +1023,6 @@ Each player will have 12 turns during the game. After each turn, the player must
                                                 <color key="shadowColor" name="AccentColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.077025369678475217" green="0.5449927137305699" blue="0.1292120866237686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-8j-Qrr" userLabel="BotHalf">
                                         <rect key="frame" x="26.666666666666657" y="464" width="336.66666666666674" height="248"/>

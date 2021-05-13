@@ -10,15 +10,13 @@ import UIKit
 
 class YachtDiceViewController: UIViewController {
     
-    //var calculate:CalculationsDelegate?
-    
     var diceRoll:[Dice]=[]
     var P1Bonus:[Int]=[]//Stores values from singles
     var P2Bonus:[Int]=[]
     var P1TotalArr:[Int]=[]//array of all scores for P1
     var P2TotalArr:[Int]=[]//array of all scores for P2
     var num:Int = 1//used when dice is being toggled
-    var count:Int = 3//number of rolls
+    var rolls:Int = 3//number of rolls
     var countdown = 24//used in gameEnd
     var Player = 1//P1 or P2
     var D1Item = Dice(value: 1, selected: false)
@@ -74,9 +72,6 @@ class YachtDiceViewController: UIViewController {
     @IBOutlet weak var P2Fives: UILabel!
     @IBOutlet weak var P2Sixes: UILabel!
     
-    
-    
-
     //2nd column Player 1
     @IBOutlet weak var P1Free: UILabel!
     @IBOutlet weak var P1FourOfKind: UILabel!
@@ -101,7 +96,7 @@ class YachtDiceViewController: UIViewController {
         //rolls random number from 1-6 for all dices not selected
         var currentIndex=0
         for _ in diceRoll {
-            if(diceRoll[currentIndex].selected==false && count > 0){
+            if(diceRoll[currentIndex].selected==false && rolls > 0){
                 let DRoll = arc4random_uniform(6) + 1
                 diceRoll[currentIndex].value=Int(DRoll)
                 if(currentIndex==0){
@@ -122,14 +117,14 @@ class YachtDiceViewController: UIViewController {
             }
             currentIndex+=1
         }
-        if(count>0){
-            count-=1
+        if(rolls>0){
+            rolls-=1
         }
-        self.NumberOfRolls.text="Rolls: "+String(count)
+        self.NumberOfRolls.text="Rolls: "+String(rolls)
     }
     
     @IBAction func D1Tap(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             diceRoll[0].selected.toggle()
             num = diceRoll[0].value
             if(diceRoll[0].selected==true){
@@ -141,7 +136,7 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func D2Tap(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             diceRoll[1].selected.toggle()
             num = diceRoll[1].value
             if(diceRoll[1].selected==true){
@@ -153,7 +148,7 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func D3Tap(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             diceRoll[2].selected.toggle()
             num = diceRoll[2].value
             if(diceRoll[2].selected==true){
@@ -165,7 +160,7 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func D4Tap(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             diceRoll[3].selected.toggle()
             num = diceRoll[3].value
             if(diceRoll[3].selected==true){
@@ -177,7 +172,7 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func D5Tap(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             diceRoll[4].selected.toggle()
             num = diceRoll[4].value
             if(diceRoll[4].selected==true){
@@ -190,7 +185,7 @@ class YachtDiceViewController: UIViewController {
     
     //Left side buttons
     @IBAction func Ones(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Ones.text, text1.isEmpty {
                     let current = calc.Ones(arr: diceRoll)
@@ -216,7 +211,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Twos(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Twos.text, text1.isEmpty {
                     let current = calc.Twos(arr: diceRoll)
@@ -243,7 +238,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Threes(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Threes.text, text1.isEmpty {
                     let current = calc.Threes(arr: diceRoll)
@@ -271,7 +266,7 @@ class YachtDiceViewController: UIViewController {
         
     }
     @IBAction func Fours(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Fours.text, text1.isEmpty {
                     let current = calc.Fours(arr: diceRoll)
@@ -298,7 +293,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Fives(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Fives.text, text1.isEmpty {
                     let current = calc.Fives(arr: diceRoll)
@@ -325,7 +320,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Sixes(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Sixes.text, text1.isEmpty {
                     let current = calc.Sixes(arr: diceRoll)
@@ -373,7 +368,7 @@ class YachtDiceViewController: UIViewController {
     
     //Right side buttons
     @IBAction func Free(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if(Player == 1){
                 if let text1 = P1Free.text, text1.isEmpty {
                     let current = calc.freeHand(arr: diceRoll)
@@ -397,7 +392,7 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func FourOfKind(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if Player == 1 {
                 if let text1 = P1FourOfKind.text, text1.isEmpty{
                     let current = calc.FourKinds(arr: diceRoll)
@@ -419,7 +414,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Fullhouse(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if Player == 1 {
                 if let text1 = P1FullHouse.text, text1.isEmpty{
                     let current = calc.FullHouse(arr: diceRoll)
@@ -441,7 +436,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func SStraight(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if Player == 1 {
                 if let text1 = P1SmStraight.text, text1.isEmpty{
                     let current = calc.SmallStraight(arr: diceRoll)
@@ -463,7 +458,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func LStraight(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if Player == 1 {
                 if let text1 = P1Lstraight.text, text1.isEmpty{
                     let current = calc.LargeStraight(arr: diceRoll)
@@ -485,7 +480,7 @@ class YachtDiceViewController: UIViewController {
         }
     }
     @IBAction func Yacht(_ sender: Any) {
-        if(count<=2){
+        if(rolls<=2){
             if Player == 1 {
                 if let text1 = P1Yacht.text, text1.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
@@ -516,21 +511,21 @@ class YachtDiceViewController: UIViewController {
         diceRoll.append(D4Item)
         diceRoll.append(D5Item)
         self.currentPlayer.text = "Player 1 Turn"
-        self.NumberOfRolls.text="Rolls: "+String(count)
+        self.NumberOfRolls.text="Rolls: "+String(rolls)
     }
     
 //move to next player
     func nextPlayer(){
-        count = 3
+        rolls = 3
         if(Player == 1){
             self.currentPlayer.text = "Player 2 Turn"
-            self.NumberOfRolls.text="Rolls: "+String(count)
+            self.NumberOfRolls.text="Rolls: "+String(rolls)
             Player = 2
             nextTurnReset()
         }
         else if(Player == 2){
             self.currentPlayer.text = "Player 1 Turn"
-            self.NumberOfRolls.text="Rolls: "+String(count)
+            self.NumberOfRolls.text="Rolls: "+String(rolls)
             Player = 1
             nextTurnReset()
         }

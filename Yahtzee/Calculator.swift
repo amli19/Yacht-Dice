@@ -9,16 +9,14 @@ public class Calculator{
     //var yachtDiceViewController = YachtDiceViewController()
 
     var valueArray:[Int]=[]
-    var currentIndex = 0
-    var countNums = 0
-    var score = 0 //
+    var currentIndex = 0//keep track of place when going through array
+    var countNums = 0//stores amount of dice with same values
+    var score = 0 //end score after calculations
     var i = 0 //for arrays to keep track
     var P1total=0
     var P2total=0
     var BonusArray:[Int]=[]
-    var P1Total:[Int]=[]
-    var P2Total:[Int]=[]
-    var unique=false
+    var unique=false//determines whether or not dice values should be removed after countNum()
     
     func parseValues(arrInt:[Yahtzee.YachtDiceViewController.Dice])  {
         //insert values into value array
