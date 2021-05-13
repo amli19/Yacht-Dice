@@ -164,6 +164,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Ones.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
@@ -173,10 +174,11 @@ class YachtDiceViewController: UIViewController {
                     self.P2Ones.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
     }
@@ -188,6 +190,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Twos.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
 
@@ -198,10 +201,11 @@ class YachtDiceViewController: UIViewController {
                     self.P2Twos.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
     }
@@ -213,6 +217,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Threes.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
 
@@ -223,10 +228,11 @@ class YachtDiceViewController: UIViewController {
                     self.P2Threes.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
         
@@ -239,6 +245,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Fours.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
 
@@ -249,10 +256,11 @@ class YachtDiceViewController: UIViewController {
                     self.P2Fours.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
     }
@@ -264,6 +272,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Fives.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
 
@@ -274,10 +283,11 @@ class YachtDiceViewController: UIViewController {
                     self.P2Fives.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
     }
@@ -289,6 +299,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Sixes.text = String(current)
                     P1Bonus.append(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
 
@@ -299,15 +310,17 @@ class YachtDiceViewController: UIViewController {
                     self.P2Sixes.text = String(current)
                     P2Bonus.append(current)
                     P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
+            BonusPoints()
             calculateTotal()
         }
+        
     }
     func BonusPoints(){
-        if(P1Bonus.count==5){
+        if(P1Bonus.count==6){
             if(calc.bonus(arr: P1Bonus)){
                 self.P1BonusLabel.text = "35"
                 P1TotalArr.append(35)
@@ -315,9 +328,10 @@ class YachtDiceViewController: UIViewController {
                 self.P1BonusLabel.text="0"
             }
         }
-        if(P2Bonus.count==5){
+        if(P2Bonus.count==6){
             if(calc.bonus(arr: P2Bonus)){
                 self.P2BonusLabel.text = "35"
+                P2TotalArr.append(35)
             }else{
                 self.P2BonusLabel.text="0"
             }
@@ -332,6 +346,7 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.freeHand(arr: diceRoll)
                     self.P1Free.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
@@ -339,11 +354,11 @@ class YachtDiceViewController: UIViewController {
                 if let text2 = P2Free.text, text2.isEmpty {
                     let current = calc.freeHand(arr: diceRoll)
                     self.P2Free.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
     }
@@ -355,17 +370,18 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.FourKinds(arr: diceRoll)
                     self.P1FourOfKind.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2FourOfKind.text, text2.isEmpty{
                     let current = calc.FourKinds(arr: diceRoll)
                     self.P2FourOfKind.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
     }
@@ -376,17 +392,18 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.FullHouse(arr: diceRoll)
                     self.P1FullHouse.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2FullHouse.text, text2.isEmpty{
                     let current = calc.FullHouse(arr: diceRoll)
                     self.P2FullHouse.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
     }
@@ -397,17 +414,18 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.SmallStraight(arr: diceRoll)
                     self.P1SmStraight.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2SmStraight.text, text2.isEmpty{
                     let current = calc.SmallStraight(arr: diceRoll)
                     self.P2SmStraight.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
     }
@@ -418,17 +436,18 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.LargeStraight(arr: diceRoll)
                     self.P1Lstraight.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2LStraight.text, text2.isEmpty{
                     let current = calc.LargeStraight(arr: diceRoll)
                     self.P2LStraight.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
     }
@@ -439,17 +458,18 @@ class YachtDiceViewController: UIViewController {
                     let current = calc.Yacht(arr: diceRoll)
                     self.P1Yahtzee.text = String(current)
                     P1TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2Yahtzee.text, text2.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
                     self.P2Yahtzee.text = String(current)
-                    P1TotalArr.append(current)
+                    P2TotalArr.append(current)
+                    countdown -= 1
                     nextPlayer()
                 }
             }
-            countdown -= 1
             calculateTotal()
         }
         

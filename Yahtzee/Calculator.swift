@@ -158,9 +158,28 @@ public class Calculator{
         score = 0
         unique=true
         parseValues(arrInt: arr)
-        if((countNum(num: 1) == 1 && countNum(num: 2) == 1 && countNum(num: 3) == 1 && countNum(num: 4) == 1) ||
-           (countNum(num: 2) == 1 && countNum(num: 3) == 1 && countNum(num: 4) == 1 && countNum(num: 5) == 1) ||
-           (countNum(num: 3) == 1 && countNum(num: 4) == 1 && countNum(num: 5) == 1 && countNum(num: 6) == 1)){
+        //if there ar 2 of some it wont work
+        let one = countNum(num: 1)
+        let two = countNum(num: 2)
+        let three = countNum(num: 3)
+        let four = countNum(num: 4)
+        let five = countNum(num: 5)
+        let six = countNum(num: 6)
+        if((//check first set of combinations
+            one <= 2 && two == 1 && three == 1 && four == 1) ||
+            (one == 1 && two <= 2 && three == 1 && four == 1) ||
+            (one == 1 && two == 1 && three <= 2 && four == 1) ||
+            (one == 1 && two == 1 && three == 1 && four <= 2) ||
+            //check second set of combinations
+            (two <= 2 && three == 1 && four == 1 && five == 1) ||
+            (two == 1 && three <= 2 && four == 1 && five == 1) ||
+            (two == 1 && three == 1 && four <= 2 && five == 1) ||
+            (two == 1 && three == 1 && four == 1 && five <= 2) ||
+            //check third set of combinations
+            (three <= 2 && four == 1 && five == 1 && six == 1) ||
+            (three == 1 && four <= 2 && five == 1 && six == 1) ||
+            (three == 1 && four == 1 && five <= 2 && six == 1) ||
+            (three == 1 && four == 1 && five == 1 && six <= 2)){
             score = 15
         }
         valueArray.removeAll()
