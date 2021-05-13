@@ -147,8 +147,8 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">A turn starts with a player rolling all five dice.   The player may then set aside any number of dice by tapping the dice.   Dices that have been set aside cannot be rerolled.  Dice that have not been set aside can be rerolled, or the current player can move onto scoring.  Players can reroll dice that have been previously set aside by tapping the dice again.
-</mutableString>
+                                        <string key="content">A turn starts with a player rolling all five dice.   The player may then set aside any number of dice by tapping the dice.   Dices that have been set aside cannot be rerolled.  Dice that have not been set aside can be rerolled, or the current player can move onto scoring.  Players can reroll dice that have been previously set aside by tapping the dice again.
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
@@ -174,8 +174,8 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">On each turn, a player has a maximum of three rolls. After a third roll, the player must stop rolling and put in a score. 
-Each player will have 12 turns during the game. After each turn, the player must enter a score in one of the rows on the score sheet. Once a score has been entered, the score in the chosen category cannot be overwritten.  If a player makes a roll that does not qualify in any category, a category of the player's choosing will receive a score of "0". </mutableString>
+                                        <string key="content">On each turn, a player has a maximum of three rolls. After a third roll, the player must stop rolling and put in a score. 
+Each player will have 12 turns during the game. After each turn, the player must enter a score in one of the rows on the score sheet. Once a score has been entered, the score in the chosen category cannot be overwritten.  If a player makes a roll that does not qualify in any category, a category of the player's choosing will receive a score of "0". </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>

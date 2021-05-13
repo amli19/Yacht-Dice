@@ -30,13 +30,12 @@ class YachtDiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        navigationItem.backButtonTitle = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(addTapped))
         initStart()
     }
-
-
-    
+    struct Dice {
+        var value:Int
+        var selected:Bool
+    }
     
     @IBOutlet weak var NumberOfRolls: UILabel!
     
@@ -575,6 +574,16 @@ class YachtDiceViewController: UIViewController {
             }
             self.P1TotalLabel.text = String(totalP1)
             self.P2TotalLabel.text = String(totalP2)
+            if(totalP1>totalP2){
+                let alert1 = UIAlertController(title: "The Winner is...", message: "Player 1!!!", preferredStyle: .alert)
+                alert1.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert1, animated: true)
+            }else{
+                let alert2 = UIAlertController(title: "The Winner is...", message: "Player 2!!!", preferredStyle: .alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert2, animated: true)
+            }
+            
         }
     }
     func gameReset()  {
@@ -619,11 +628,7 @@ class YachtDiceViewController: UIViewController {
         self.P2TotalLabel.text=""
     }
     
-    struct Dice {
-        var value:Int
-        var selected:Bool
-    }
-    
+
 
 
     
