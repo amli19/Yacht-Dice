@@ -179,7 +179,7 @@ public class Calculator{
         return score
     }
 
-    func Yahtzee(arr:[Yahtzee.YachtDiceViewController.Dice]) -> Int {
+    func Yacht(arr:[Yahtzee.YachtDiceViewController.Dice]) -> Int {
         score = 0
         unique=true
         parseValues(arrInt: arr)

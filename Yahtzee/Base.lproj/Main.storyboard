@@ -18,22 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Roll" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-Zv-0Ps">
-                                <rect key="frame" x="75" y="116" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-V1-4Ya">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="BmJ-zA-tir">
+                                <rect key="frame" x="61" y="110" width="266.66666666666669" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2q-2N-2mv">
-                                <rect key="frame" x="134" y="295" width="123" height="57"/>
+                                <rect key="frame" x="84" y="318" width="221" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play" backgroundImage="table"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Play" backgroundImage="PlayGame">
+                                    <color key="titleColor" red="0.077025369679999997" green="0.54499271370000002" blue="0.1292120866" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="PlayButton:" destination="qIw-Sr-XAU" eventType="touchUpInside" id="rj0-7b-JS6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEJ-tI-EUZ">
-                                <rect key="frame" x="134" y="411" width="123" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOt-m6-ZVr" userLabel="How To Play">
+                                <rect key="frame" x="85" y="428" width="220" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Quit" backgroundImage="table"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="How To Play" backgroundImage="PlayGame">
+                                    <color key="titleColor" red="0.077025369679999997" green="0.54499271370000002" blue="0.1292120866" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEJ-tI-EUZ">
+                                <rect key="frame" x="84" y="536" width="220" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Quit" backgroundImage="PlayGame">
+                                    <color key="titleColor" red="0.077025369679999997" green="0.54499271370000002" blue="0.1292120866" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="QuitButton:" destination="qIw-Sr-XAU" eventType="touchUpInside" id="Jam-Vl-LGZ"/>
                                 </connections>
@@ -42,9 +59,14 @@
                         <viewLayoutGuide key="safeArea" id="38k-x1-3dQ"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="x3S-V1-4Ya" firstAttribute="top" secondItem="38k-x1-3dQ" secondAttribute="top" id="CSE-lf-OgY"/>
+                            <constraint firstItem="x3S-V1-4Ya" firstAttribute="leading" secondItem="1eV-bE-QLo" secondAttribute="leading" id="SiF-iV-5Ct"/>
+                            <constraint firstItem="38k-x1-3dQ" firstAttribute="trailing" secondItem="x3S-V1-4Ya" secondAttribute="trailing" id="iTJ-3N-d4l"/>
+                            <constraint firstItem="38k-x1-3dQ" firstAttribute="bottom" secondItem="x3S-V1-4Ya" secondAttribute="bottom" id="j2B-ZK-hjl"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="TitleCard" destination="UBS-Zv-0Ps" id="LCG-WJ-wNJ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="5jh-uV-a0v"/>
                     </connections>
                 </viewController>
@@ -406,7 +428,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="xHN-OX-IRo"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <state key="normal" title="Yahtzee" backgroundImage="P1"/>
+                                                                        <state key="normal" title="Yacht" backgroundImage="P1"/>
                                                                         <connections>
                                                                             <action selector="Yahtzee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bT-5M-Sx9"/>
                                                                         </connections>
@@ -567,9 +589,10 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hm-Fi-Kvi">
                                                         <rect key="frame" x="47.333333333333329" y="0.0" width="55.333333333333329" height="24"/>
-                                                        <color key="backgroundColor" red="0.22242666176539236" green="0.8242066016281766" blue="0.91394106217616577" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.66681671139999998" green="0.88049566749999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                                        <color key="textColor" systemColor="systemBlueColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AuS-os-ZDe" userLabel="Bonus points">
@@ -606,9 +629,10 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJV-gC-EMY">
                                                         <rect key="frame" x="31" y="0.0" width="88" height="24"/>
-                                                        <color key="backgroundColor" red="0.91508486750843543" green="0.91786755181347146" blue="0.17113191784049497" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.66681671139999998" green="0.88049566749999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" red="0.8771858808290155" green="0.39375377291722485" blue="0.07339663874012689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" red="1" green="0.21601564541118112" blue="0.22560108930038236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="highlightedColor" name="AccentColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Fc-tZ-WYO">
@@ -826,8 +850,10 @@
     <resources>
         <image name="Dice1" width="99" height="98"/>
         <image name="P1" width="99" height="99"/>
+        <image name="PlayGame" width="266.66665649414062" height="166.66667175292969"/>
         <image name="Roll" width="32" height="32"/>
         <image name="table" width="414" height="736"/>
+        <image name="title" width="200" height="200"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -842,9 +868,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

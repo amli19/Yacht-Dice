@@ -425,13 +425,13 @@ class YachtDiceViewController: UIViewController {
         if(count<=2){
             if Player == 1 {
                 if let text1 = P1Yahtzee.text, text1.isEmpty{
-                    let current = calc.Yahtzee(arr: diceRoll)
+                    let current = calc.Yacht(arr: diceRoll)
                     self.P1Yahtzee.text = String(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2Yahtzee.text, text2.isEmpty{
-                    let current = calc.Yahtzee(arr: diceRoll)
+                    let current = calc.Yacht(arr: diceRoll)
                     self.P2Yahtzee.text = String(current)
                     nextPlayer()
                 }
