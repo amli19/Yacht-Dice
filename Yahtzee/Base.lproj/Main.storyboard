@@ -482,7 +482,7 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <state key="normal" title="Yacht" backgroundImage="P1"/>
                                                                         <connections>
-                                                                            <action selector="Yahtzee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bT-5M-Sx9"/>
+                                                                            <action selector="Yacht:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bT-5M-Sx9"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -852,7 +852,13 @@
                             <constraint firstItem="Geb-v6-oN6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x5H-LZ-wCm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yacht Dice" id="KhR-h4-o1F"/>
+                    <navigationItem key="navigationItem" title="Yacht Dice" id="KhR-h4-o1F">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="kno-FJ-0g1">
+                            <connections>
+                                <action selector="ResetButton:" destination="BYZ-38-t0r" id="ZH4-fN-24Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Bonus" destination="6Hm-Fi-Kvi" id="BPd-Ef-udq"/>
                         <outlet property="D1" destination="1dh-GY-BgK" id="DKn-df-Chw"/>
@@ -874,7 +880,7 @@
                         <outlet property="P1Threes" destination="apv-WP-DIA" id="dtY-tW-hmc"/>
                         <outlet property="P1TotalLabel" destination="xw5-L0-NyB" id="WyN-gU-QEb"/>
                         <outlet property="P1Twos" destination="gq1-sW-nJA" id="hit-n3-Phg"/>
-                        <outlet property="P1Yahtzee" destination="F24-Ne-dLC" id="CSD-7B-hd8"/>
+                        <outlet property="P1Yacht" destination="F24-Ne-dLC" id="CSD-7B-hd8"/>
                         <outlet property="P2BonusLabel" destination="EcU-eP-UW3" id="2jB-Hy-ej9"/>
                         <outlet property="P2Fives" destination="VIK-Ea-HBD" id="mQH-Lz-eLZ"/>
                         <outlet property="P2FourOfKind" destination="erk-TW-RyG" id="aqj-M2-XMM"/>
@@ -888,7 +894,7 @@
                         <outlet property="P2Threes" destination="ppX-WS-ZXQ" id="CSW-2y-BS1"/>
                         <outlet property="P2TotalLabel" destination="cbQ-LH-Fjb" id="ntp-Oa-Uar"/>
                         <outlet property="P2Twos" destination="Nyy-Mm-JgN" id="cml-kE-OgA"/>
-                        <outlet property="P2Yahtzee" destination="5sl-Sz-9il" id="li6-vH-7Qq"/>
+                        <outlet property="P2Yacht" destination="5sl-Sz-9il" id="li6-vH-7Qq"/>
                         <outlet property="RollView" destination="LZt-kg-6dw" id="fa9-Rh-7Ak"/>
                         <outlet property="Total" destination="jJV-gC-EMY" id="a79-oU-JY3"/>
                         <outlet property="currentPlayer" destination="Ov4-GP-n3R" id="sn4-nx-izQ"/>

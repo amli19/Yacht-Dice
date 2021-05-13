@@ -13,13 +13,14 @@ class YachtDiceViewController: UIViewController {
     //var calculate:CalculationsDelegate?
     
     var diceRoll:[Dice]=[]
-    var P1Bonus:[Int]=[]
+    var P1Bonus:[Int]=[]//Stores values from singles
     var P2Bonus:[Int]=[]
-    var P1TotalArr:[Int]=[]
-    var P2TotalArr:[Int]=[]
-    var count:Int = 3
-    var countdown = 24
-    var Player = 1
+    var P1TotalArr:[Int]=[]//array of all scores for P1
+    var P2TotalArr:[Int]=[]//array of all scores for P2
+    var num:Int = 1//used when dice is being toggled
+    var count:Int = 3//number of rolls
+    var countdown = 24//used in gameEnd
+    var Player = 1//P1 or P2
     var D1Item = Dice(value: 1, selected: false)
     var D2Item = Dice(value: 1, selected: false)
     var D3Item = Dice(value: 1, selected: false)
@@ -83,18 +84,19 @@ class YachtDiceViewController: UIViewController {
     @IBOutlet weak var P1FullHouse: UILabel!
     @IBOutlet weak var P1SmStraight: UILabel!
     @IBOutlet weak var P1Lstraight: UILabel!
-    @IBOutlet weak var P1Yahtzee: UILabel!
+    @IBOutlet weak var P1Yacht: UILabel!
     //2nd column Player 2
     @IBOutlet weak var P2Free: UILabel!
     @IBOutlet weak var P2FourOfKind: UILabel!
     @IBOutlet weak var P2FullHouse: UILabel!
     @IBOutlet weak var P2SmStraight: UILabel!
     @IBOutlet weak var P2LStraight: UILabel!
-    @IBOutlet weak var P2Yahtzee: UILabel!
-    
-    
+    @IBOutlet weak var P2Yacht: UILabel!
+
+    @IBAction func ResetButton(_ sender: Any) {
+        gameReset()
+    }
     @IBOutlet weak var RollView: UIButton!
-    
     
     @IBAction func Roll(_ sender: Any) {
         //rolls random number from 1-6 for all dices not selected
@@ -130,30 +132,60 @@ class YachtDiceViewController: UIViewController {
     @IBAction func D1Tap(_ sender: Any) {
         if(count<=2){
             diceRoll[0].selected.toggle()
+            num = diceRoll[0].value
+            if(diceRoll[0].selected==true){
+                D1.setImage(UIImage(named: "D\(num)Highlight"), for: .normal)
+            }else{
+                D1.setImage(UIImage(named: "Dice\(num)"), for: .normal)
+            }
         }
     }
     
     @IBAction func D2Tap(_ sender: Any) {
         if(count<=2){
             diceRoll[1].selected.toggle()
+            num = diceRoll[1].value
+            if(diceRoll[1].selected==true){
+                D2.setImage(UIImage(named: "D\(num)Highlight"), for: .normal)
+            }else{
+                D2.setImage(UIImage(named: "Dice\(num)"), for: .normal)
+            }
         }
     }
     
     @IBAction func D3Tap(_ sender: Any) {
         if(count<=2){
             diceRoll[2].selected.toggle()
+            num = diceRoll[2].value
+            if(diceRoll[2].selected==true){
+                D3.setImage(UIImage(named: "D\(num)Highlight"), for: .normal)
+            }else{
+                D3.setImage(UIImage(named: "Dice\(num)"), for: .normal)
+            }
         }
     }
     
     @IBAction func D4Tap(_ sender: Any) {
         if(count<=2){
             diceRoll[3].selected.toggle()
+            num = diceRoll[3].value
+            if(diceRoll[3].selected==true){
+                D4.setImage(UIImage(named: "D\(num)Highlight"), for: .normal)
+            }else{
+                D4.setImage(UIImage(named: "Dice\(num)"), for: .normal)
+            }
         }
     }
     
     @IBAction func D5Tap(_ sender: Any) {
         if(count<=2){
             diceRoll[4].selected.toggle()
+            num = diceRoll[4].value
+            if(diceRoll[4].selected==true){
+                D5.setImage(UIImage(named: "D\(num)Highlight"), for: .normal)
+            }else{
+                D5.setImage(UIImage(named: "Dice\(num)"), for: .normal)
+            }
         }
     }
     
@@ -453,20 +485,20 @@ class YachtDiceViewController: UIViewController {
             calculateTotal()
         }
     }
-    @IBAction func Yahtzee(_ sender: Any) {
+    @IBAction func Yacht(_ sender: Any) {
         if(count<=2){
             if Player == 1 {
-                if let text1 = P1Yahtzee.text, text1.isEmpty{
+                if let text1 = P1Yacht.text, text1.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
-                    self.P1Yahtzee.text = String(current)
+                    self.P1Yacht.text = String(current)
                     P1TotalArr.append(current)
                     countdown -= 1
                     nextPlayer()
                 }
             }else{
-                if let text2 = P2Yahtzee.text, text2.isEmpty{
+                if let text2 = P2Yacht.text, text2.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
-                    self.P2Yahtzee.text = String(current)
+                    self.P2Yacht.text = String(current)
                     P2TotalArr.append(current)
                     countdown -= 1
                     nextPlayer()
@@ -543,11 +575,48 @@ class YachtDiceViewController: UIViewController {
             }
             self.P1TotalLabel.text = String(totalP1)
             self.P2TotalLabel.text = String(totalP2)
-            let winneralert = UIAlertController(title: "The Winner is...", message: "Player \(2)", preferredStyle: .alert)
-            winneralert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
-            winneralert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
-            self.present(winneralert, animated: true)
         }
+    }
+    func gameReset()  {
+        countdown = 24
+        P1Bonus=[]
+        P2Bonus=[]
+        P1TotalArr=[]
+        P2TotalArr=[]
+        //P1 reset
+        self.P1Ones.text=""
+        self.P1Twos.text=""
+        self.P1Threes.text=""
+        self.P1Fours.text=""
+        self.P1Fives.text=""
+        self.P1Sixes.text=""
+        
+        self.P1Free.text=""
+        self.P1FourOfKind.text=""
+        self.P1FullHouse.text=""
+        self.P1SmStraight.text=""
+        self.P1Lstraight.text=""
+        self.P1Yacht.text=""
+        
+        self.P1BonusLabel.text=""
+        self.P1TotalLabel.text=""
+        
+        self.P2Ones.text=""
+        self.P2Twos.text=""
+        self.P2Threes.text=""
+        self.P2Fours.text=""
+        self.P2Fives.text=""
+        self.P2Sixes.text=""
+        
+        self.P2Free.text=""
+        self.P2FourOfKind.text=""
+        self.P2FullHouse.text=""
+        self.P2SmStraight.text=""
+        self.P2LStraight.text=""
+        self.P2Yacht.text=""
+        
+        self.P2BonusLabel.text=""
+        self.P2TotalLabel.text=""
     }
     
     struct Dice {
