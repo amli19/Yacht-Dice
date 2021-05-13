@@ -79,8 +79,8 @@ class YachtDiceViewController: UIViewController {
     @IBOutlet weak var P1Free: UILabel!
     @IBOutlet weak var P1FourOfKind: UILabel!
     @IBOutlet weak var P1FullHouse: UILabel!
-    @IBOutlet weak var P1SmStright: UILabel!
-    @IBOutlet weak var P1Lstright: UILabel!
+    @IBOutlet weak var P1SmStraight: UILabel!
+    @IBOutlet weak var P1Lstraight: UILabel!
     @IBOutlet weak var P1Yahtzee: UILabel!
     //2nd column Player 2
     @IBOutlet weak var P2Free: UILabel!
@@ -310,6 +310,7 @@ class YachtDiceViewController: UIViewController {
         if(P1Bonus.count==5){
             if(calc.bonus(arr: P1Bonus)){
                 self.P1BonusLabel.text = "35"
+                P1TotalArr.append(35)
             }else{
                 self.P1BonusLabel.text="0"
             }
@@ -330,6 +331,7 @@ class YachtDiceViewController: UIViewController {
                 if let text1 = P1Free.text, text1.isEmpty {
                     let current = calc.freeHand(arr: diceRoll)
                     self.P1Free.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -337,6 +339,7 @@ class YachtDiceViewController: UIViewController {
                 if let text2 = P2Free.text, text2.isEmpty {
                     let current = calc.freeHand(arr: diceRoll)
                     self.P2Free.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -351,12 +354,14 @@ class YachtDiceViewController: UIViewController {
                 if let text1 = P1FourOfKind.text, text1.isEmpty{
                     let current = calc.FourKinds(arr: diceRoll)
                     self.P1FourOfKind.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2FourOfKind.text, text2.isEmpty{
                     let current = calc.FourKinds(arr: diceRoll)
                     self.P2FourOfKind.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -370,12 +375,14 @@ class YachtDiceViewController: UIViewController {
                 if let text1 = P1FullHouse.text, text1.isEmpty{
                     let current = calc.FullHouse(arr: diceRoll)
                     self.P1FullHouse.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2FullHouse.text, text2.isEmpty{
                     let current = calc.FullHouse(arr: diceRoll)
                     self.P2FullHouse.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -386,15 +393,17 @@ class YachtDiceViewController: UIViewController {
     @IBAction func SStraight(_ sender: Any) {
         if(count<=2){
             if Player == 1 {
-                if let text1 = P1SmStright.text, text1.isEmpty{
+                if let text1 = P1SmStraight.text, text1.isEmpty{
                     let current = calc.SmallStraight(arr: diceRoll)
-                    self.P1SmStright.text = String(current)
+                    self.P1SmStraight.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2SmStraight.text, text2.isEmpty{
                     let current = calc.SmallStraight(arr: diceRoll)
                     self.P2SmStraight.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -405,15 +414,17 @@ class YachtDiceViewController: UIViewController {
     @IBAction func LStraight(_ sender: Any) {
         if(count<=2){
             if Player == 1 {
-                if let text1 = P1Lstright.text, text1.isEmpty{
+                if let text1 = P1Lstraight.text, text1.isEmpty{
                     let current = calc.LargeStraight(arr: diceRoll)
-                    self.P1Lstright.text = String(current)
+                    self.P1Lstraight.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2LStraight.text, text2.isEmpty{
                     let current = calc.LargeStraight(arr: diceRoll)
                     self.P2LStraight.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
@@ -427,12 +438,14 @@ class YachtDiceViewController: UIViewController {
                 if let text1 = P1Yahtzee.text, text1.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
                     self.P1Yahtzee.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }else{
                 if let text2 = P2Yahtzee.text, text2.isEmpty{
                     let current = calc.Yacht(arr: diceRoll)
                     self.P2Yahtzee.text = String(current)
+                    P1TotalArr.append(current)
                     nextPlayer()
                 }
             }
