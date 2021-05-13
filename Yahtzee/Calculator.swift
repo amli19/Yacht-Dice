@@ -95,6 +95,7 @@ public class Calculator{
             score += valueArray[i]
             i+=1
         }
+        valueArray.removeAll()
         return score
     }
     //func ThreeKinds() -> Int {
@@ -194,102 +195,20 @@ public class Calculator{
         return score
     }
 
+    //check for bonus
+    func bonus(arr:[Int])->Bool{
+        score = 0
+        i = 0
+        for _ in arr {
+            score += arr[i]
+            i+=1
+        }
+        if(score >= 63){
+            return true
+        }
+        else{
+            return false
+        }
+    }
 
-//    func BonusP1()->Int{
-//
-//
-//        if let text1 = yachtDiceViewController.P1Ones.text, text1.isEmpty{
-//            BonusArray.append(Int(text1) ?? 0)
-//        }
-//        if let text2 = yachtDiceViewController.P1Twos.text, text2.isEmpty{
-//            BonusArray.append(Int(text2) ?? 0)
-//        }
-//        if let text3 = yachtDiceViewController.P1Threes.text, text3.isEmpty{
-//            BonusArray.append(Int(text3) ?? 0)
-//        }
-//        if let text4 = yachtDiceViewController.P1Fours.text, text4.isEmpty{
-//            BonusArray.append(Int(text4) ?? 0)
-//        }
-//        if let text5 = yachtDiceViewController.P1Fives.text, text5.isEmpty{
-//            BonusArray.append(Int(text5) ?? 0)
-//        }
-//        if let text6 = yachtDiceViewController.P1Sixes.text, text6.isEmpty{
-//            BonusArray.append(Int(text6) ?? 0)
-//        }
-//
-//        //add all values and compare
-//        score = 0
-//        i = 0
-//        for _ in BonusArray {
-//            score += BonusArray[i]
-//            i+=1
-//        }
-//        if(score >= 63){
-//            return 35
-//        }
-//        else{
-//            return 0
-//        }
-//
-//    }
-//    func BonusP2()->Int{
-//        if let text1 = yachtDiceViewController.P2Ones.text, text1.isEmpty{
-//            BonusArray.append(Int(text1) ?? 0)
-//        }
-//        if let text2 = yachtDiceViewController.P2Twos.text, text2.isEmpty{
-//            BonusArray.append(Int(text2) ?? 0)
-//        }
-//        if let text3 = yachtDiceViewController.P2Threes.text, text3.isEmpty{
-//            BonusArray.append(Int(text3) ?? 0)
-//        }
-//        if let text4 = yachtDiceViewController.P2Fours.text, text4.isEmpty{
-//            BonusArray.append(Int(text4) ?? 0)
-//        }
-//        if let text5 = yachtDiceViewController.P2Fives.text, text5.isEmpty{
-//            BonusArray.append(Int(text5) ?? 0)
-//        }
-//        if let text6 = yachtDiceViewController.P2Sixes.text, text6.isEmpty{
-//            BonusArray.append(Int(text6) ?? 0)
-//        }
-//
-//        //add all values and compare
-//        score = 0
-//        i = 0
-//        for _ in BonusArray {
-//            score += BonusArray[i]
-//            i+=1
-//        }
-//        if(score >= 63){
-//            return 35
-//        }
-//        else{
-//            return 0
-//        }
-//
-//    }
-//
-//    func registerTotalArray(chosen:Int){
-//        if(yachtDiceViewController.Player==1){
-//            P1Total.append(chosen)
-//        }
-//        else if(yachtDiceViewController.Player==2){
-//            P2Total.append(chosen)
-//        }
-//    }
-//
-//    //calculates final total
-//    func Total(){
-//        for _ in P1Total {
-//            P1total += P1Total[i]
-//            i+=1
-//        }
-//        for _ in P2Total {
-//            P2total += P2Total[i]
-//            i+=1
-//        }
-//    }
-//    struct Dice {
-//        var value:Int
-//        var selected:Bool
-//    }
 }
