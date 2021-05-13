@@ -30,8 +30,10 @@ class YachtDiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        navigationItem.backButtonTitle = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(addTapped))
         initStart()
     }
+
 
     
     
@@ -541,6 +543,10 @@ class YachtDiceViewController: UIViewController {
             }
             self.P1TotalLabel.text = String(totalP1)
             self.P2TotalLabel.text = String(totalP2)
+            let winneralert = UIAlertController(title: "The Winner is...", message: "Player \(2)", preferredStyle: .alert)
+            winneralert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
+            winneralert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
+            self.present(winneralert, animated: true)
         }
     }
     
