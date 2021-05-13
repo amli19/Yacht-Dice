@@ -115,7 +115,7 @@ public class Calculator{
         i = 0
         unique=true
         parseValues(arrInt: arr)
-        if(countNum(num: 1) == 4||countNum(num: 2) == 4||countNum(num: 3) == 4||countNum(num: 4) == 4||countNum(num: 5) == 4||countNum(num: 6) == 4){
+        if(countNum(num: 1) >= 4||countNum(num: 2) >= 4||countNum(num: 3) >= 4||countNum(num: 4) >= 4||countNum(num: 5) >= 4||countNum(num: 6) >= 4){
             for _ in valueArray {
                 score += valueArray[i]
                 i+=1
