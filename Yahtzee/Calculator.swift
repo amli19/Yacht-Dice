@@ -196,6 +196,8 @@ public class Calculator{
 
 
 //    func BonusP1()->Int{
+//
+//
 //        if let text1 = yachtDiceViewController.P1Ones.text, text1.isEmpty{
 //            BonusArray.append(Int(text1) ?? 0)
 //        }

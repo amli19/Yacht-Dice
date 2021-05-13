@@ -140,7 +140,6 @@ class YachtDiceViewController: UIViewController {
                     self.P1Ones.text = String(current)
                     nextPlayer()
                 }
-            
             }
             else {
                 if let text2 = P2Ones.text, text2.isEmpty {
@@ -160,7 +159,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Twos.text = String(current)
                     nextPlayer()
                 }
-            
+
             }
             else {
                 if let text2 = P2Twos.text, text2.isEmpty {
@@ -180,7 +179,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Threes.text = String(current)
                     nextPlayer()
                 }
-            
+
             }
             else {
                 if let text2 = P2Threes.text, text2.isEmpty {
@@ -201,7 +200,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Fours.text = String(current)
                     nextPlayer()
                 }
-            
+
             }
             else {
                 if let text2 = P2Fours.text, text2.isEmpty {
@@ -221,7 +220,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Fives.text = String(current)
                     nextPlayer()
                 }
-            
+
             }
             else {
                 if let text2 = P2Fives.text, text2.isEmpty {
@@ -241,7 +240,7 @@ class YachtDiceViewController: UIViewController {
                     self.P1Sixes.text = String(current)
                     nextPlayer()
                 }
-            
+
             }
             else {
                 if let text2 = P2Sixes.text, text2.isEmpty {
@@ -276,20 +275,94 @@ class YachtDiceViewController: UIViewController {
     }
     
     @IBAction func FourOfKind(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if Player == 1 {
+                if let text1 = P1FourOfKind.text, text1.isEmpty{
+                    let current = calc.FourKinds(arr: diceRoll)
+                    self.P1FourOfKind.text = String(current)
+                    nextPlayer()
+                }
+            }else{
+                if let text2 = P2FourOfKind.text, text2.isEmpty{
+                    let current = calc.FourKinds(arr: diceRoll)
+                    self.P2FourOfKind.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func Fullhouse(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if Player == 1 {
+                if let text1 = P1FullHouse.text, text1.isEmpty{
+                    let current = calc.FullHouse(arr: diceRoll)
+                    self.P1FullHouse.text = String(current)
+                    nextPlayer()
+                }
+            }else{
+                if let text2 = P2FullHouse.text, text2.isEmpty{
+                    let current = calc.FullHouse(arr: diceRoll)
+                    self.P2FullHouse.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func SStraight(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if Player == 1 {
+                if let text1 = P1SmStright.text, text1.isEmpty{
+                    let current = calc.SmallStraight(arr: diceRoll)
+                    self.P1FullHouse.text = String(current)
+                    nextPlayer()
+                }
+            }else{
+                if let text2 = P2SmStright.text, text2.isEmpty{
+                    let current = calc.SmallStraight(arr: diceRoll)
+                    self.P2FullHouse.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func LStraight(_ sender: Any) {
-        nextPlayer()
+        if(count<=2){
+            if Player == 1 {
+                if let text1 = P1Lstright.text, text1.isEmpty{
+                    let current = calc.LargeStraight(arr: diceRoll)
+                    self.P1Lstright.text = String(current)
+                    nextPlayer()
+                }
+            }else{
+                if let text2 = P2Lstright.text, text2.isEmpty{
+                    let current = calc.LargeStraight(arr: diceRoll)
+                    self.P2Lstright.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
     @IBAction func Yahtzee(_ sender: Any) {
-        //number of rolls must be 2 or lower
-        //register score when tapped
+        if(count<=2){
+            if Player == 1 {
+                if let text1 = P1Yahtzee.text, text1.isEmpty{
+                    let current = calc.Yahtzee(arr: diceRoll)
+                    self.P1Yahtzee.text = String(current)
+                    nextPlayer()
+                }
+            }else{
+                if let text2 = P2Yahtzee.text, text2.isEmpty{
+                    let current = calc.Yahtzee(arr: diceRoll)
+                    self.P2Yahtzee.text = String(current)
+                    nextPlayer()
+                }
+            }
+            countdown -= 1
+        }
     }
 
     
